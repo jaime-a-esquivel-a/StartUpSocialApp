@@ -11,6 +11,7 @@ connection.once('open', async () => {
  await Thought.deleteMany({});
  await User.deleteMany({});
 
+ /*
  const thoughts_usr01 = [
     {
         thoughtText: 'Thought txt usr01 by usr01',
@@ -34,29 +35,33 @@ connection.once('open', async () => {
  ];
 
  const thoughts = thoughts_usr01.concat(thoughts_usr02);
+ */
 
  const users = [
     {
-        username: 'USR_01',
-        email: 'usr01@testmail.com',
-        thoughts: thoughts_usr01,
+        username: 'lewis44',
+        email: 'lh44@mercedes.com',
+        //thoughts: thoughts_usr01,
 
     },
     {
-        username: 'USR_02',
-        email: 'usr02@testmail.com',
-        thoughts: thoughts_usr02,
+        username: 'george63',
+        email: 'gr63@mercedes.com',
+        //thoughts: thoughts_usr02,
     },
     {
-        username: 'USR_03',
-        email: 'usr03@testmail.com',
+        username: 'max33',
+        email: 'mv33@redbull.com',
+    },
+    {
+        username: 'lance18',
+        email: 'ls18@aston-martin.com',
     },
  ];
 
  await User.collection.insertMany(users);
- await Thought.collection.insertMany(thoughts);
+ //await Thought.collection.insertMany(thoughts);
 
- // Cierra la sesión de los datos de siembra para indicar lo que debería aparecer en la base de datos
  console.table(users);
  console.table(thoughts);
  console.info('Seeding complete!');
